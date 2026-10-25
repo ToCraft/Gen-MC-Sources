@@ -1,0 +1,63 @@
+
+# Doxygen configuration for decompiled NeoForge / Minecraft Java sources.
+
+PROJECT_NAME           = "Minecraft Client"
+PROJECT_BRIEF          = "Decompiled Java API reference"
+OUTPUT_DIRECTORY       = docs
+
+# Include both target sources and dependency sources.
+INPUT                  = doxygen_sources/targets \
+                         doxygen_sources/dependencies
+RECURSIVE              = YES
+FILE_PATTERNS          = *.java
+EXCLUDE_PATTERNS       = */.git/* */build/* */target/*
+EXCLUDE                =
+
+# Java parsing and documentation.
+OPTIMIZE_OUTPUT_JAVA   = YES
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = YES
+EXTRACT_PACKAGE        = YES
+EXTRACT_STATIC         = YES
+HIDE_UNDOC_MEMBERS     = NO
+HIDE_UNDOC_CLASSES     = NO
+JAVADOC_AUTOBRIEF      = YES
+MULTILINE_CPP_IS_BRIEF = NO
+MARKDOWN_SUPPORT       = YES
+AUTOLINK_SUPPORT       = YES
+REFERENCES_RELATION    = YES
+REFERENCES_LINK_SOURCE = YES
+SOURCE_BROWSER         = YES
+INLINE_SOURCES         = NO
+
+# Useful navigation and indexes.
+ALPHABETICAL_INDEX     = YES
+FULL_PATH_NAMES        = YES
+STRIP_FROM_PATH        = doxygen_sources/
+WARNINGS               = YES
+WARN_IF_UNDOCUMENTED   = NO
+WARN_IF_DOC_ERROR      = YES
+WARN_NO_PARAMDOC       = NO
+QUIET                  = NO
+
+# HTML output.
+GENERATE_HTML          = YES
+HTML_OUTPUT            = html
+HTML_TIMESTAMP         = YES
+GENERATE_LATEX         = NO
+GENERATE_XML           = NO
+GENERATE_MAN           = NO
+GENERATE_RTF           = NO
+GENERATE_DOCBOOK       = NO
+
+# Keep the generated documentation self-contained.
+HTML_EXTRA_FILES       =
+USE_MDFILE_AS_MAINPAGE =
+
+# use Doxygen Awesome CSS
+GENERATE_TREEVIEW      = YES # required!
+DISABLE_INDEX          = NO
+FULL_SIDEBAR           = NO
+HTML_EXTRA_STYLESHEET  = doxygen-awesome-css/doxygen-awesome.css \
+                        doxygen-awesome-css/doxygen-awesome-sidebar-only.css
+HTML_COLORSTYLE        = AUTO # required with Doxygen >= 1.9.5
